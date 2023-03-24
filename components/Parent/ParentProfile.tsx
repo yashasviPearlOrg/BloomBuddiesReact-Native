@@ -241,7 +241,11 @@ const ParentProfile = () => {
                     ]
                   );
                 }
+                else{
+                  setEditable(false);
+                }
               }}
+              
             >
               <Ionicons name="checkmark-circle-sharp" size={40} color="white" />
             </Pressable>
@@ -357,7 +361,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   line: {
-    height: 1,
+    height: SIZES.height>400? 1.5:1,
     backgroundColor: COLORS.primary,
     width: "95%",
     marginVertical: "4%",
@@ -368,7 +372,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 15,
     borderBottomLeftRadius: 15,
     padding: "2%",
-    height: "30%",
+    height: SIZES.width>400?"25%":"30%",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -376,7 +380,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     padding: "2%",
     paddingTop: "5%",
-    paddingVertical: "20%",
     height: "70%",
   },
   rows: {

@@ -24,7 +24,7 @@ const Login = ({ navigation }: any) => {
     //     alert("Invalid Credentials!!!");
     //   }
     // }
-    navigation.navigate("Home", { user: "Parent" });
+    navigation.navigate("Home", { user: "Babysitter" });
   };
 
   const goToParentSignup = () => {

@@ -108,9 +108,11 @@ const HomeScreen = ({ navigation, route }: any) => {
         screenOptions={({ route }) => ({
           tabBarActiveBackgroundColor: "#CBE6FF",
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused, size }) => {
+          tabBarIcon: ({ focused }) => {
             let iconName: any;
             let rn = route.name;
+
+            const size = SIZES.width>400?30:20;
 
             if (rn === "Profile")
               iconName = focused ? "account-circle" : "account-circle-outline";
