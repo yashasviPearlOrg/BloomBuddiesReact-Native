@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { TextInput } from "react-native-paper";
 import { COLORS, SIZES } from "../../constants";
-import PopupModal from "../PopupModal";
+import PopupModal from "../Popups/PopupModal";
 
 const ParentSignup = ({ navigation }: any) => {
   const [visiblity, setVisiblity] = useState(true);
@@ -64,7 +64,7 @@ const ParentSignup = ({ navigation }: any) => {
                   left={
                     <TextInput.Icon
                       iconColor={COLORS.primary}
-                      icon="email"
+                      icon="account"
                       size={20}
                     />
                   }
@@ -80,7 +80,7 @@ const ParentSignup = ({ navigation }: any) => {
                   left={
                     <TextInput.Icon
                       iconColor={COLORS.primary}
-                      icon="email"
+                      icon="account"
                       size={20}
                     />
                   }
@@ -156,7 +156,7 @@ const ParentSignup = ({ navigation }: any) => {
                   secureTextEntry={secureTextEntry}
                   // onChangeText={setPass}
                 />
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} onPress={()=>navigation.navigate('EditParentProfileOne')}>
                   <Text style={styles.buttonText}>Sign Up</Text>
                 </Pressable>
               </View>
@@ -282,6 +282,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.width > 400 ? 20 : 18,
     color: COLORS.primary,
     margin: "1%",
+    backgroundColor: "white",
   },
   button: {
     width: SIZES.width > 400 ? "80%" : "70%",

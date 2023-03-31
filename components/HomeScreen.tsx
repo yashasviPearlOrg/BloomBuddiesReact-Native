@@ -8,14 +8,14 @@ import ParentProfile from "./Parent/ParentProfile";
 import Posts from "./BabySitter/JobPosts";
 import ChatBox from "./ChatBox";
 import BabySitterProfile from "./BabySitter/BabySitterProfile";
-import Calendar from "./BabySitter/Calendar";
+import MyCalendar from "./BabySitter/MyCalendar";
 import MyBuddies from "./Parent/MyBuddies";
 import BabySitters from "./Parent/BabySitters";
 import Documents from "./Documents";
 import Notifications from "./Notifications";
-import MenuOptionsPopup from "./MenuOptionsPopup";
-import NotificationSettingsPopup from "./NotificationSettingsPopup";
-import DeleteProfilePopup from "./DeleteProfilePopup";
+import MenuOptionsPopup from "./Popups/MenuOptionsPopup";
+import NotificationSettingsPopup from "./Popups/NotificationSettingsPopup";
+import DeleteProfilePopup from "./Popups/DeleteProfilePopup";
 
 const HomeScreen = ({ navigation, route }: any) => {
   const userType = route?.params?.user;
@@ -227,7 +227,7 @@ const HomeScreen = ({ navigation, route }: any) => {
           <>
             <Tab.Screen
               name="Calendar"
-              component={Calendar}
+              component={MyCalendar}
               options={{
                 title: "Calendar",
                 headerTintColor: COLORS.primary,

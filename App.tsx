@@ -11,7 +11,8 @@ import HomeScreen from "./components/HomeScreen";
 import { useEffect, useState } from "react";
 import EditBabySitterProfilePageOne from "./components/BabySitter/EditBabySitterProfilePageOne";
 import BabySitterProfile from "./components/BabySitter/BabySitterProfile";
-import DeleteProfilePopup from "./components/DeleteProfilePopup";
+import DeleteProfilePopup from "./components/Popups/DeleteProfilePopup";
+import EditParentProfilePageOne from "./components/Parent/EditParentProfilePageOne";
 
 
 export default function App() {
@@ -51,9 +52,14 @@ export default function App() {
           options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="EditBabySitterProfile"
+            name="EditBabySitterProfileOne"
             component={EditBabySitterProfilePageOne}
             options={{ headerShown: false }}
+          />
+          <Stack.Screen
+          name="EditParentProfileOne"
+          component={EditParentProfilePageOne}
+          options={{headerShown:false}}
           />
           <Stack.Screen
             name="BabySitterProfile"

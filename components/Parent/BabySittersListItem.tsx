@@ -2,28 +2,22 @@ import React from "react";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { COLORS, SIZES } from "../../constants";
 
-const JobPostItem = () => {
+const BabySittersListItem = () => {
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          borderColor: COLORS.white,
-          borderWidth: 1,
-          borderRadius: 2,
-          paddingVertical: 2,
-          paddingHorizontal: '2%',
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
+      <View style={styles.rows}>
+        <Text style={styles.subHeadings}>Bloom Buddy Name</Text>
         <Image
-          source={require("../../assets/account.png")}
-          resizeMode="contain"
-          style={{ height: 24, width: 24, borderRadius: 20, marginHorizontal:'3%', marginVertical:'1%' }}
+          source={require("../../assets/images/uk.jpg")}
+          resizeMode="cover"
+          style={{
+            height: SIZES.width > 400 ? 30 : 20,
+            width: SIZES.width > 400 ? 40 : 30,
+            borderColor: COLORS.primary,
+            borderWidth: 1,
+            alignSelf: "center",
+          }}
         />
-        <Text style={[styles.subHeadings, { color: "white" }]}>
-          Parent Name
-        </Text>
       </View>
       <View style={styles.rows}>
         <View>
@@ -33,22 +27,44 @@ const JobPostItem = () => {
             style={styles.profileImage}
           />
         </View>
-        <View style={styles.column}>
-          <View style={styles.box}>
-            <Text>dummy</Text>
+        <View
+          style={[styles.column, { width: "50%", paddingHorizontal: "1%" }]}
+        >
+          <View
+            style={[
+              styles.rows,
+              { justifyContent: "space-between", width: "95%" },
+            ]}
+          >
+            <Text style={styles.label}>Experience -</Text>
+            <Text style={styles.text}>5 yrs</Text>
           </View>
-          <View style={styles.box}>
-            <Text>dummy</Text>
-          </View>
-          <View style={styles.box}>
-            <Text>dummy</Text>
+          <View>
+            <Text style={styles.label}>Address -</Text>
+            <Text style={styles.text}>123, ABC Street, Boston, UK</Text>
           </View>
         </View>
+        <View style={[styles.column, { width: "22%", justifyContent:'space-around'}]}>
+          <Pressable style={[styles.button,{width:'100%'}]}>
+            <Text style={styles.buttonText}>Message</Text>
+          </Pressable>
+
+          <Pressable style={[styles.button,{width:'100%'}]}>
+            <Text style={styles.buttonText}>Request Meeting</Text>
+          </Pressable>
+
+          <Pressable style={[styles.button,{width:'100%'}]}>
+            <Text style={styles.buttonText}>Hire</Text>
+          </Pressable>
+        </View>
       </View>
-      <View style={styles.rows}>
-        <Text style={styles.buttonText}>+1926438038</Text>
-        <Pressable style={styles.warnBtn}><Text style={{color:'white'}}>Details</Text></Pressable>
-        <Pressable style={styles.successBtn}><Text style={{color:'white'}}>Apply</Text></Pressable>
+      <View style={[styles.rows, { justifyContent: "space-between" }]}>
+        <View>
+          <Text>Badges</Text>
+        </View>
+        <Pressable style={[styles.button, { width: "70%" }]}>
+          <Text style={styles.buttonText}>Open Profile</Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -58,10 +74,12 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     width: "100%",
+    borderColor: "black",
+    borderWidth: 1,
     borderRadius: 5,
     padding: "2%",
     marginVertical: "1%",
-    backgroundColor: COLORS.primary,
+    backgroundColor:'white'
   },
   line: {
     height: SIZES.height > 400 ? 1.5 : 1,
@@ -94,7 +112,7 @@ const styles = StyleSheet.create({
   },
   column: {
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   profileImage: {
     height: 90,
@@ -117,24 +135,24 @@ const styles = StyleSheet.create({
   label: {
     color: COLORS.black,
     fontSize: 16,
-    marginLeft: 5,
-    width: "40%",
+    fontWeight:'500'
   },
   text: {
-    color: COLORS.white,
-    fontSize: 16,
+    color: COLORS.black,
+    fontSize: 15,
+    marginLeft: 5,
   },
   button: {
     backgroundColor: COLORS.primary,
-    paddingVertical: "2%",
+    paddingVertical: "1%",
     paddingHorizontal: "8%",
     display: "flex",
     alignItems: "center",
-    borderRadius: 10,
-    alignSelf: "flex-end",
+    borderRadius: 5,
+    marginVertical:'2%'
   },
   buttonText: {
-    fontSize: SIZES.width > 400 ? 20 : 18,
+    fontSize: SIZES.width > 400 ? 18 : 15,
     color: COLORS.white,
     position: "relative",
     textAlign: "center",
@@ -187,31 +205,6 @@ const styles = StyleSheet.create({
   informationContainer: {
     marginVertical: "2%",
   },
-  box: {
-    paddingHorizontal: "20%",
-    paddingVertical: "2%",
-    backgroundColor: COLORS.white,
-    borderColor: COLORS.primary,
-    borderWidth: 1,
-    borderRadius: 5,
-    marginVertical: "2%",
-  },
-  successBtn:{
-    backgroundColor:COLORS.success,
-    paddingVertical: "1%",
-    paddingHorizontal: "8%",
-    display: "flex",
-    alignItems: "center",
-    borderRadius: 10,
-  },
-  warnBtn:{
-    backgroundColor:COLORS.warning,
-    paddingVertical: "1%",
-    paddingHorizontal: "8%",
-    display: "flex",
-    alignItems: "center",
-    borderRadius: 10,
-  }
 });
 
-export default JobPostItem;
+export default BabySittersListItem;

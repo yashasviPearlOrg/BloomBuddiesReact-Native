@@ -1,13 +1,27 @@
-import React from 'react'
-import { View, Text } from "react-native";
-
+import React from "react";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
+import BabySittersListItem from "./BabySittersListItem";
 
 const BabySitters = () => {
   return (
-    <View>
-      <Text>BabySitters</Text>
-    </View>
-  )
-}
+    <ScrollView>
+      <View style={styles.container}>
+        <Text>BabySitters</Text>
+        <BabySittersListItem />
+        <BabySittersListItem />
+        <BabySittersListItem />
+        <BabySittersListItem />
+        <BabySittersListItem />
+      </View>
+    </ScrollView>
+  );
+};
 
-export default BabySitters
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor:'white',
+    paddingHorizontal:'1%'
+  }
+})
+
+export default BabySitters;

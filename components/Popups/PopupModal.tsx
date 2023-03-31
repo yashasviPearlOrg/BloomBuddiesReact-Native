@@ -9,11 +9,13 @@ import {
   TouchableOpacity,
   Modal,
 } from "react-native";
-import { COLORS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../../constants";
 
 const PopupModal = ({ visibility, msg1, msg2, header, confirmAction }: any) => {
 
   const [modalVisible,setModalVisible] = useState(visibility)
+
+  
 
   return (
     <View>
@@ -86,7 +88,7 @@ const PopupModal = ({ visibility, msg1, msg2, header, confirmAction }: any) => {
                 </Text>
 
                 <Image
-                  source={require("../assets/images/french.jpg")}
+                  source={require("../../assets/images/french.jpg")}
                   resizeMode="cover"
                   style={{
                     height: SIZES.width>400?200:100,
@@ -127,7 +129,7 @@ const PopupModal = ({ visibility, msg1, msg2, header, confirmAction }: any) => {
                 </Text>
 
                 <Image
-                  source={require("../assets/images/uk.jpg")}
+                  source={require("../../assets/images/uk.jpg")}
                   resizeMode="cover"
                   style={{
                     height: SIZES.width>400?200:100,

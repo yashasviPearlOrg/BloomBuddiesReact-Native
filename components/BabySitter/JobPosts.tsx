@@ -1,11 +1,25 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { COLORS } from "../../constants";
+import JobPostItem from "./JobPostItem";
 
 const Posts = () => {
   return (
-    <View>
-      <Text>Posts page</Text>
-    </View>
-  )
-}
+    <ScrollView style={styles.container}>
+      <View>
+        <JobPostItem />
+        <JobPostItem />
+        <JobPostItem />
+        <JobPostItem />
+      </View>
+    </ScrollView>
+  );
+};
 
-export default Posts
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: COLORS.white,
+    padding: "2%",
+  },
+});
+
+export default Posts;

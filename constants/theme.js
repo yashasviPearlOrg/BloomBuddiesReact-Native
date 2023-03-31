@@ -7,7 +7,10 @@ export const COLORS = {
     gray: "#6A6A6A",
     blue: "#0682FE",
     voilet: "#705ECF",
-    primary:"#1E90FF"
+    primary:"#1E90FF",
+    success:"#088300",
+    warning:"#F0B600",
+    error:"#AC0000"
   };
 
   export const SIZES = {

@@ -26,7 +26,7 @@ import RNDateTimePicker, {
   DateTimePickerAndroid,
 } from "@react-native-community/datetimepicker";
 
-const BabySitterProfile = ({ navigation }: any) => {
+const BabySitterProfile = () => {
   const [editable, setEditable] = useState<any>(false);
 
   const [datePickerVisibile, setDatePickerVisibile] = useState<any>(false);
@@ -364,17 +364,19 @@ const BabySitterProfile = ({ navigation }: any) => {
             <Table borderStyle={{borderColor:'black',borderWidth:1}}>
             <Row
               data={head}
-              textStyle={{ textAlign: "center" }}
               style={{height:30}}
+              textStyle={styles.cellStyle}
               flexArr={[1.5,1,1,1,1,1,1,1]}
             />
+            
             <TableWrapper>
               <Rows
                 data={data}
-                textStyle={{ textAlign: "center" }}
-                style={{height:SIZES.width>400?30:40}}
+                style={{height:SIZES.width>400?30:40,alignContent:'center', justifyContent:'center'}}
+                textStyle={styles.cellStyle}
                 flexArr={[1.5,1,1,1,1,1,1,1]}
               />
+              
             </TableWrapper>
           </Table>
           </View>
@@ -515,6 +517,9 @@ const styles = StyleSheet.create({
   informationContainer: {
     marginVertical: "2%",
   },
+  cellStyle:{
+    textAlign:'center'
+  }
 });
 
 export default BabySitterProfile;

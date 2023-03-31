@@ -61,6 +61,8 @@ const ParentProfile = () => {
     // console.log("childs::", childs)
   }, [childsData]);
 
+
+
   const convertDateIn_DDMMYYYY_Format = (selectedDate: any) => {
     const selDate = selectedDate ? selectedDate : new Date();
     let date: any = selDate.getDate();
@@ -240,12 +242,10 @@ const ParentProfile = () => {
                       },
                     ]
                   );
-                }
-                else{
+                } else {
                   setEditable(false);
                 }
               }}
-              
             >
               <Ionicons name="checkmark-circle-sharp" size={40} color="white" />
             </Pressable>
@@ -327,13 +327,13 @@ const ParentProfile = () => {
             <Table style={{ marginVertical: "5%" }}>
               <Row
                 data={head}
-                textStyle={{ textAlign: "center" }}
-                style={{ paddingVertical: "1%" }}
+                textStyle={styles.cellStyle}
+                style={{ paddingVertical: "2%" }}
               />
               <TableWrapper>
                 <Rows
                   data={data}
-                  textStyle={{ textAlign: "center" }}
+                  textStyle={styles.cellStyle}
                   style={{ paddingVertical: "2%" }}
                 />
               </TableWrapper>
@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   line: {
-    height: SIZES.height>400? 1.5:1,
+    height: SIZES.height > 400 ? 1.5 : 1,
     backgroundColor: COLORS.primary,
     width: "95%",
     marginVertical: "4%",
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 15,
     borderBottomLeftRadius: 15,
     padding: "2%",
-    height: SIZES.width>400?"25%":"30%",
+    height: SIZES.width > 400 ? "25%" : "30%",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -469,6 +469,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "5%",
     right: "2%",
+  },
+  cellStyle: {
+    textAlign: "center",
   },
 });
 

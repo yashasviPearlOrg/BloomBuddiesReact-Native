@@ -3,7 +3,7 @@ import { Modal, Pressable, StyleSheet } from "react-native";
 import { View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import ToggleSwitch from "toggle-switch-react-native";
-import { COLORS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../../constants";
 
 const NotificationSettingsPopup = ({
   visibility,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Modal, Pressable, StyleSheet, Alert } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import ToggleSwitch from "toggle-switch-react-native";
-import { COLORS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../../constants";
 import { TextInput } from "react-native-paper";
 
 const DeleteProfilePopup = ({
