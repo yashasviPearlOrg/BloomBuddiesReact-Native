@@ -13,18 +13,18 @@ const Login = ({ navigation }: any) => {
   const [pass, setPass] = useState("");
 
   const login = () => {
-    // if (email != null && pass != null) {
-    //   if (email === "parent@gmail.com" && pass === "parent@123") {
-    //     setUserType("Parent");
-    //     navigation.navigate("Home", { user: "Parent" });
-    //   } else if (email === "babysitter@gmail.com" && pass === "baby@123") {
-    //     setUserType("BabySitter");
-    //     navigation.navigate("Home", { user: "BabySitter" });
-    //   } else {
-    //     alert("Invalid Credentials!!!");
-    //   }
-    // }
-    navigation.navigate("Home", { user: "Parent" });
+    if (email != null && pass != null) {
+      if (email === "parent@gmail.com" && pass === "parent@123") {
+        setUserType("Parent");
+        navigation.navigate("Home", { user: "Parent" });
+      } else if (email === "babysitter@gmail.com" && pass === "baby@123") {
+        setUserType("BabySitter");
+        navigation.navigate("Home", { user: "BabySitter" });
+      } else {
+        alert("Invalid Credentials!!!");
+      }
+    }
+    // navigation.navigate("Home", { user: "Parent" });
   };
 
   const goToParentSignup = () => {
